@@ -59,7 +59,6 @@ const App = () => {
     );
     setData(d);
     setLoading(false);
-    console.log(d);
   };
 
   return loading ? (
@@ -74,7 +73,7 @@ const App = () => {
     >
       <div className="container">
         {/* Display search result */}
-        <div className="search-result">
+        <div className="answer">
           <h1
             dangerouslySetInnerHTML={{
               __html: `${data?.results[0]?.question}`,
@@ -85,7 +84,7 @@ const App = () => {
         <input
           value={answer}
           onChange={inputHandler}
-          placeholder="Search products"
+          placeholder="Answer"
           className="input"
         />
 
