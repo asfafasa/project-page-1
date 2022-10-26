@@ -34,12 +34,14 @@ const App = () => {
   // This function is triggered when the Search buttion is clicked
   const checkAnswer = async () => {
     if (data?.results[0].correct_answer === answer) {
+      setAnswer("");
       setMessage("Right Answer");
       toast.success("Right Answer");
       setTimeout(() => {
         getQuestion();
       }, 1000);
     } else {
+      setAnswer("");
       setMessage("Wrong Answer");
       toast.error("Wrong Answer");
       setTimeout(() => {
@@ -49,6 +51,7 @@ const App = () => {
   };
 
   useEffect(() => {
+    setAnswer("");
     getQuestion();
   }, []);
 
